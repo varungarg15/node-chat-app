@@ -17,9 +17,6 @@ var socket = io();
         }
    };
 
-
-
-
     socket.on('connect', function() {
         var params = jQuery.deparam(window.location.search);
 
@@ -82,7 +79,6 @@ var socket = io();
 
         var messageTextbox = jQuery('[name=message]');
         socket.emit('createMessage', {
-            from: 'User',
             text: jQuery('[name=message]').val()
         }, function () {
          messageTextbox.val('');
