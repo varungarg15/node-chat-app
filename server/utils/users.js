@@ -8,9 +8,6 @@
 // removeUser(id)
 // getUser(id)
 // getuserList(room)
-const validator = require('validator');
-const _ = require('lodash');
-var capitalize = require('lodash.capitalize');
 
 class Users {
   constructor () {
@@ -18,16 +15,7 @@ class Users {
   }
 
   addUser(id, name, room) {
-      var user = {id, 
-        name :
-        {
-          unique: true,
-          name: _.capitalize(name)
-        }, 
-        room :{
-            unique: true,
-          room: _.capitalize(room)
-        }};
+      var user = {id,name,room};
       this.users.push(user);
       return user;
   }
